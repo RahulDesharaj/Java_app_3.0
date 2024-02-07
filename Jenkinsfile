@@ -21,7 +21,6 @@ pipeline{
             gitCheckout(
                 branch: "main",
                 url: "https://github.com/RahulDesharaj/Java_app_3.0.git"
-                
             )
             }
         }
@@ -73,11 +72,6 @@ pipeline{
                    mvnBuild()
                }
             }
-        }
-
-        stage('JFrog')
-        {
-         
         }
         stage('Docker Image Build'){
          when { expression {  params.action == 'create' } }
